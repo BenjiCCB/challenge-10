@@ -24,6 +24,9 @@ function callPrompts(){
     ])
 
   .then((data) => {    
+    console.log(data.title);
+    console.log(data.name);
+    
     if(data.more == "YES"){
       callPrompts();
     }
