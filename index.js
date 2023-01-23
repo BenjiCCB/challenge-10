@@ -1,6 +1,15 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
+const cardsArryay = []
+const card = {
+  employeeName: "",
+  employeeType: "",
+  id: "",
+  field2: [],
+  field3: [],
+}
+
 
 function callManagerPrompts(){
   inquirer
