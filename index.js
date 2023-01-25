@@ -51,6 +51,14 @@ function callManagerPrompts(){
     
     console.log("array check: ");
     console.log(employeesArray[0].email);
+
+    const filename = "testing.html";
+    fs.writeFile(filename, 
+      "i'm a file",
+    (err) =>
+      err ? console.log(err) : console.log('Success!')
+    );
+
     
     if(data.more == "Engineer"){
       callEngineerPrompts();
