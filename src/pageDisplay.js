@@ -42,7 +42,7 @@ function renderPage(employeesArray){
         <div class="container">
           <div class="cards-container card-deck mb-3 text-center">`
 
-    renderCard(employeesArray[0]);
+    var cardDisplay = renderCard(employeesArray[0]);
 
     var footer = `</div>
             </div>
