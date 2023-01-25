@@ -1,5 +1,15 @@
 function renderCard(employee){
-    var card =
+  
+  var field3Label;
+  if (employee.type == "Manager"){
+    field3Label = "office"
+  } else if (employee.type == "Engineer") {
+    field3Label = "Github"
+  } else {
+    field3Label = "school"
+  }
+  
+  var card =
     `<div class="card mb-4 box-shadow">
         <div class="card-header">
           <h4 class="emp-role my-0 font-weight-normal">${employee.type}</h4>
@@ -9,7 +19,7 @@ function renderCard(employee){
           <ul class="infoList list-unstyled mt-3 mb-4">           
               <li><span class="fieldLabel">ID: </span><span>${employee.id}</span></li>
               <li><span class="fieldLabel">email: </span><span>${employee.email}</span></li>
-              <li><span class="fieldLabel">office: </span><span>${employee.office}</span></li>
+              <li><span class="fieldLabel">${field3Label}: </span><span>${employee.field3}</span></li>
           </ul>
         </div>
       </div>`
@@ -42,6 +52,8 @@ function renderPage(employeesArray){
         <div class="container">
           <div class="cards-container card-deck mb-3 text-center">`
 
+    
+          
     var cardDisplay = renderCard(employeesArray[0]);
 
     var footer = `</div>
@@ -53,4 +65,4 @@ function renderPage(employeesArray){
 }
 
 
-module.exports = pageDisplay;
+module.exports = renderPage;

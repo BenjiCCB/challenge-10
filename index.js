@@ -6,7 +6,7 @@ const Manager = require("./lib/manager");
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
 
-const pageDisplay = require("./src/pageDisplay");
+const renderPage = require("./src/renderPage");
 
 const employeesArray = [];
 
@@ -16,7 +16,7 @@ function callManagerPrompts(){
       {
         type: 'input',
         name: 'name',
-        message: 'What is the manager\'s name?',
+        message: 'What is your manager\'s name?',
       },    
       {
         type: 'input',
@@ -49,22 +49,17 @@ function callManagerPrompts(){
       data.office);
     employeesArray.push(managerItem)
     
-    console.log("array check: ");
-    console.log(employeesArray[0].email);
+    // console.log("array check: ");
+    // console.log(employeesArray[0].email);
 
-    const filename = "testing.html";
-    fs.writeFile(filename, 
-      "i'm a file",
-    (err) =>
-      err ? console.log(err) : console.log('Success!')
-    );
-
-    
+       
     if(data.more == "Engineer"){
       callEngineerPrompts();
     } else if (data.more == "Intern"){
       callInternPrompts();
-    } 
+    } else{
+      writeFile()
+    }
   });
 }
 
@@ -73,13 +68,23 @@ function callEngineerPrompts(){
     .prompt([
       {
         type: 'input',
-        name: 'title',
-        message: 'What is the engineer\'s title?',
+        name: 'name',
+        message: 'What is the engineer\'s name?',
       },    
       {
         type: 'input',
-        name: 'name',
-        message: 'What is your engineer\'s name?',
+        name: 'id',
+        message: 'What is the engineer\'s ID?',
+      },
+      {
+        type: 'input',
+        name: 'email',
+        message: 'What is the engineer\'s email?',
+      },
+      {
+        type: 'input',
+        name: 'github',
+        message: 'What is the engineer\'s GitHub?',
       },
       {
         type: 'list',
@@ -90,15 +95,21 @@ function callEngineerPrompts(){
     ])
 
   .then((data) => {    
-    console.log(data.title);
-    console.log(data.name);
+    var engineerItem = new Engineer(
+      data.name,
+      data.id,
+      data.email, 
+      data.github);
+    employeesArray.push(engineerItem)
     
     if(data.more == "Engineer"){
       callEngineerPrompts();
     } else if (data.more == "Intern"){
       callInternPrompts();
+    } else{
+      writeFile()
     }
-    
+
   });
 }
 
@@ -107,13 +118,23 @@ function callInternPrompts(){
     .prompt([
       {
         type: 'input',
-        name: 'title',
-        message: 'What is the intern\'s title?',
+        name: 'name',
+        message: 'What is the intern\'s name?',
       },    
       {
         type: 'input',
-        name: 'name',
-        message: 'What is your intern\'s name?',
+        name: 'id',
+        message: 'What is the intern\'s id?',
+      },
+      {
+        type: 'input',
+        name: 'email',
+        message: 'What is the intern\'s email?',
+      },    
+      {
+        type: 'input',
+        name: 'school',
+        message: 'What is the intern\'s school?',
       },
       {
         type: 'list',
@@ -124,14 +145,32 @@ function callInternPrompts(){
     ])
 
   .then((data) => {    
-    console.log(data.title);
-    console.log(data.name);
+    var internItem = new Intern(
+      data.name,
+      data.id,
+      data.email, 
+      data.school);
+    employeesArray.push(internItem)
     
-    if(data.more == "YES"){
-      callPrompts();
+    if(data.more == "Engineer"){
+      callEngineerPrompts();
+    } else if (data.more == "Intern"){
+      callInternPrompts();
+    } else{
+      writeFile()
     }
     
   });
+}
+
+function writeFile(){
+  var pageContent = renderPage(employeesArray);
+  
+  const filename = "testing.html";
+  fs.writeFile(filename, 
+    pageContent,
+    (err) => err ? console.log(err) : console.log('Success!')
+  );
 }
 
 // begin app
