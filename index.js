@@ -166,10 +166,10 @@ function callInternPrompts(){
 function writeFile(){
   var pageContent = renderPage(employeesArray);
   
-  const filename = "testing.html";
+  const filename = "output.html";
   fs.writeFile(filename, 
     pageContent,
-    (err) => err ? console.log(err) : console.log('Success!')
+    (err) => err ? console.log(err) : console.log('Success! View your info in the output.html file')
   );
 }
 

@@ -1,25 +1,31 @@
 function renderCard(employee){
   
   var field3Label;
+  var field3Value;
   if (employee.type == "Manager"){
     field3Label = "office"
+    field3Value = Manager.getOffice()
   } else if (employee.type == "Engineer") {
     field3Label = "Github"
+    field3Value = employee.getGithub()
   } else {
     field3Label = "school"
+    field3Value = employee.getSchool()
   }
-  
+
+
+
   var card =
     `<div class="card mb-4 box-shadow">
         <div class="card-header">
-          <h4 class="emp-role my-0 font-weight-normal">${employee.type}</h4>
+          <h4 class="emp-role my-0 font-weight-normal">${employee.getRole()}</h4>
         </div>
         <div class="card-body">
-          <h1 class="card-title pricing-card-title">${employee.name}</h1>
+          <h1 class="card-title pricing-card-title">${employee.getName()}</h1>
           <ul class="infoList list-unstyled mt-3 mb-4">           
-              <li><span class="fieldLabel">ID: </span><span>${employee.id}</span></li>
-              <li><span class="fieldLabel">email: </span><span>${employee.email}</span></li>
-              <li><span class="fieldLabel">${field3Label}: </span><span>${employee.field3}</span></li>
+              <li><span class="fieldLabel">ID: </span><span>${employee.getId()}</span></li>
+              <li><span class="fieldLabel">email: </span><span>${employee.getEmail()}</span></li>
+              <li><span class="fieldLabel">${field3Label}: </span><span>${field3Value}</span></li>
           </ul>
         </div>
       </div>`
@@ -52,16 +58,18 @@ function renderPage(employeesArray){
         <div class="container">
           <div class="cards-container card-deck mb-3 text-center">`
 
-    
-          
-    var cardDisplay = renderCard(employeesArray[0]);
+    var cardSection = "";
+    for (var i = 0; i < employeesArray.length; i++){
+      var cardDisplay = renderCard(employeesArray[i]);
+      cardSection += cardDisplay
+    }
 
     var footer = `</div>
             </div>
           </body>
         </html>`
     
-    return header + cardDisplay + footer;
+    return header + cardSection + footer;
 }
 
 
