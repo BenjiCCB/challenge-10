@@ -4,16 +4,14 @@ function renderCard(employee){
   var field3Value;
   if (employee.type == "Manager"){
     field3Label = "office"
-    field3Value = Manager.getOffice()
+    field3Value = employee.getOffice();
   } else if (employee.type == "Engineer") {
     field3Label = "Github"
-    field3Value = employee.getGithub()
+    field3Value = employee.getGithub();
   } else {
     field3Label = "school"
-    field3Value = employee.getSchool()
+    field3Value = employee.getSchool();
   }
-
-
 
   var card =
     `<div class="card mb-4 box-shadow">
