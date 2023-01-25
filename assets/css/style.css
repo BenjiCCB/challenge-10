@@ -6,3 +6,11 @@
 .card-header {
     background-color: #859cd8 !important;
 }
+
+.fieldLabel{
+    font-weight: bold;
+}
+
+.infoList {
+    font-size: 1.5em;
+}

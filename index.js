@@ -6,6 +6,8 @@ const Manager = require("./lib/manager");
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
 
+const pageDisplay = require("./src/pageDisplay");
+
 const employeesArray = [];
 
 function callManagerPrompts(){
