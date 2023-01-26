@@ -4,7 +4,7 @@
 
 This is an app designed to take in inputs from a user specifying information about a team of employees and use this information to dynamically generate an HTML page displaying them.  View more info below, as well as a screenshot and demo video of the app in action.  
 
-Video overview (if display issues, try logging into Google or downloading file): [link here](https://drive.google.com/file/d/1dy46l3yjWG3PEH4UmyYuJ5a-jMYEgm4O/view)
+Video overview: [link here](https://monosnap.com/file/3CsHOiiph2O4J51WQPA7RP2DYrMmd8)
 
 ![console](./assets/screenshots/output.png)
 
