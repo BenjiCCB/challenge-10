@@ -17,7 +17,7 @@ function renderCard(employee){
   }
 
   var card =
-    `<div class="card mb-4 box-shadow">
+    `<div class="card-container card mb-4 box-shadow">
         <div class="card-header">
           <h4 class="emp-role my-0 font-weight-normal"><i class='fas ${iconValue}'></i> ${employee.getRole()}</h4>
         </div>

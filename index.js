@@ -124,7 +124,7 @@ function callInternPrompts(){
       {
         type: 'input',
         name: 'id',
-        message: 'What is the intern\'s id?',
+        message: 'What is the intern\'s ID?',
       },
       {
         type: 'input',
