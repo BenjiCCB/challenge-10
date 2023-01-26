@@ -4,7 +4,7 @@
 
 This is an app designed to take in inputs from a user specifying information about a team of employees and use this information to dynamically generate an HTML page displaying them.  View more info below, as well as a screenshot and demo video of the app in action.  
 
-Video overview (if diplay issues, try Google login or downloading file): [link here](https://drive.google.com/file/d/1aafC0zu95bp5mlnKHAIptUKuWFew65wv/view)
+Video overview (if display issues, try logging into Google or downloading file): [link here](https://drive.google.com/file/d/1dy46l3yjWG3PEH4UmyYuJ5a-jMYEgm4O/view)
 
 ![console](./assets/screenshots/output.png)
 
@@ -32,13 +32,13 @@ Video overview (if diplay issues, try Google login or downloading file): [link h
 
 ## Installation Instructions 
 
-After installing node, simply use "NPM install" to install all depencies in the package.json file, including Inquirer and the Jest testing packet.  To run the application, use "node index.js" in the appropriate folder, or to run tests, use "npm run test" 
+After installing node, simply use "npm install" to install all dependencies in the package.json file, including Inquirer and the Jest testing packet.  To run the application, use "node index.js" in the appropriate folder, or to run tests, use "npm run test" 
 
 ---
 
 ## Usage Information 
 
-For each of the prompts, provide the relevant information about your team, to be added to the automatically generated ReadMe file
+For each of the prompts, provide the relevant information about your team member.  After adding a "manager", you can choose to add "engineers" and/or "interns", or to complete your team.  Once complete, your team will automatcially be rendered into the output.html file 
 
 ---
 
@@ -56,7 +56,7 @@ This app was developed indepentently, though all suggestions are welcome
 
 ## Testing Instructions 
 
-Feel free to try finding bugs, although hopefully there shouldn't be any!
+Use "npm run test" to activate the app's test suite.  Feel free to try finding bugs, although hopefully there shouldn't be any!
 
 ---
 

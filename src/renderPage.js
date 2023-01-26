@@ -44,12 +44,13 @@ function renderPage(employeesArray){
         <meta name="description" content="">
         <meta name="author" content="">
         <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
-        <link rel="stylesheet" href="./assets/css/style.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="./assets/css/style.css"/>
 
         <title>Team Members Roster</title>
         
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
       </head>
     
       <body>
