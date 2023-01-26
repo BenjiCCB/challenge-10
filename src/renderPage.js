@@ -5,18 +5,21 @@ function renderCard(employee){
   if (employee.type == "Manager"){
     field3Label = "office"
     field3Value = employee.getOffice();
+    iconValue = "fa-user";
   } else if (employee.type == "Engineer") {
     field3Label = "Github"
     field3Value = employee.getGithub();
+    iconValue = "fa-code"
   } else {
     field3Label = "school"
     field3Value = employee.getSchool();
+    iconValue = "fa-graduation-cap"
   }
 
   var card =
     `<div class="card mb-4 box-shadow">
         <div class="card-header">
-          <h4 class="emp-role my-0 font-weight-normal">${employee.getRole()}</h4>
+          <h4 class="emp-role my-0 font-weight-normal"><i class='fas ${iconValue}'></i> ${employee.getRole()}</h4>
         </div>
         <div class="card-body">
           <h1 class="card-title pricing-card-title">${employee.getName()}</h1>
@@ -42,6 +45,8 @@ function renderPage(employeesArray){
         <meta name="author" content="">
         <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
         <link rel="stylesheet" href="./assets/css/style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
         <title>Team Members Roster</title>
         
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
